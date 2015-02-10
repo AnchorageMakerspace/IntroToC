@@ -20,3 +20,9 @@ TODO LIST
 [] Make few side games
 [] Decide on diagram template from draw.io
 
+ADD TO WIKI LATER
+------------------------------------------------------------------------
+[] Programming convention documentation 
+	[] Scenes should be their own .c file. scene1.c scene2.c etc.
+	   all scenes will be included by scenes.h
+	

@@ -13,7 +13,7 @@ int printmsg(char *msg);
 /* Moves the cursor to a different position on the screen */
 void movecursor(int x, int y);
 /* Displays a question box */
-void questionbox(char *msg[], int size, enum color_t color);
+void questionbox(char *msg[], char *prompt, int size, enum color_t color);
 /* Displays a message box */
 void msgbox(char *name, char *msg, enum color_t color);
 /* Prompt for user input */

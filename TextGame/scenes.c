@@ -85,7 +85,7 @@ int scene_1()
 	
 	msgbox(NULL, "A face stares back at you with greyish skin and eyes that almost glow blue. I thought I lost you there for a moment.  What is your name? ", CYAN);
 	fgets(name, 20, stdin);	// get 20 characters from stdin
-	name[strnlen(name, 20)-1] = '\0'; // get rid of that white character and terminate the string
+	name[strnlen(name, 20)-1] = '\0'; // replace leftover \n with a null terminator
 	showscene(1);
 	snprintf(buffer, 150, "Nice to meet you %s. My name is Goran.", name);
 	msgbox("Goran", buffer, GREEN);
@@ -97,9 +97,8 @@ int scene_1()
 		int stop = 0;
 		// print menu of questions
 		puts(" ");
-		char *questions[] = {"1) What am I doing here?", "2)What are you?", "3) How did I get here?"};
-		questionbox(questions, 3, BLUE);
-		printf("Enter a number (or q to quit): ");
+		char *questions[] = {"1) What am I doing here?", "2) What are you?", "3) How did I get here?"};
+		questionbox(questions, "Enter a number (or 	q to quit): ", 3, BLUE);
 		scanf("%c", &item);
 		fgetc(stdin); // flush the buffer of the \n
 		// Process the input

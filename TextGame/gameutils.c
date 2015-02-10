@@ -46,10 +46,8 @@ void movecursor(int x, int y)
 }
 
 /* Display the question box, possibly get rid of this and use msgbox */
-void questionbox(char *msg[], int num, enum color_t color)
+void questionbox(char *msg[], char *prompt, int num, enum color_t color)
 {
-	// determine size of the box....
-	int boxsize = num;
 	int n;
 	
 	movecursor(current_x, current_y);	// Set the position for the box to start at....
@@ -59,7 +57,7 @@ void questionbox(char *msg[], int num, enum color_t color)
 	printf("   _______________________________________________________________ \n");
 	printf("  |                                                               |\n");
 	// Display the correct size box to hold the message
-	for(n = 0; n <= boxsize; n++) {
+	for(n = 0; n <= num; n++) {
 		printf("  |                                                               |\n");
 	}
 	printf("  |_______________________________________________________________|\n");
@@ -68,10 +66,12 @@ void questionbox(char *msg[], int num, enum color_t color)
 	movecursor(5,current_y + 2); // Move the cursor to the top of the box.
 	movecursor(current_x, current_y + 1); // Move 1 down from current position
 	fgcolor(color,0);
-	for(n = 0; n <= num; n++) {
-		printf("%s\n", msg[n]);
+	for(n = 0; n <= (num - 1); n++) {
+		printf("%s", msg[n]);
+		// Move the cursor down, dont use /n because it will jump out of the box
+		movecursor(current_x, current_y+1);
 	}
-	printf("%s\n", msg);
+	
 	fgcolor(WHITE,0);
 	movecursor(current_x, current_y + 1); // Move cursor down to right after the box	
 }
