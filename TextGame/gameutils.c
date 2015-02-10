@@ -126,7 +126,7 @@ void clear()
 
 
 /* Display stats at the top of the screen */
-void showstats(struct *character, int h_offset)
+void showstats()
 {
 	printf("\033[1;1H"); // Put the cursor to 1,1 top left
 	printf(" -----------------\n");
