@@ -11,9 +11,12 @@ TODO LIST
 [] Game saving 
 [] Create special items
 [] Create a navigation and map system
-
-
-This is Mark's test line
-
-This is Dustin's test line 2
+[] Create a function to gather user input with a box
+	[] Takes a function pointer argument to handle the input
+	[] Draws a box and displays it somewhere on the screen
+	[] After the system to manage the screen is made, make it a popup that disappears after and redraws the screen
+[] Work on questionbox function, this needs to be a popup
+[] Figure out story line
+[] Make few side games
+[] Decide on diagram template from draw.io
 
