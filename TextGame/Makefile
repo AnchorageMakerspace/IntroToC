@@ -2,6 +2,8 @@ C=gcc
 CFLAGS=-I.
 DEPS = gameutils.h scenes.h
 
+all: game
+
 %.o: %.c $(DEPS)
 		$(CC) -c -o $@ $< $(CFLAGS)
 
