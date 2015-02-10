@@ -1,15 +1,15 @@
 TODO LIST
 -----------------------------------------------------------------------
-- Change printmsg to linebreak at words, with each line no more then 60 chars
-- Create a system to keep track of what's displayed on the screen
-	* Use a stack to push and pop things to the screen
-	* That way you can have a popup that displays something then disapears
-- Define character stats and attributes
-- Create a battle system
-- Create a weapon system
-	* Different types of weapons with different damage levels
-- Game saving 
-- Create special items
-- Create a navigation and map system
+[] Change printmsg to linebreak at words, with each line no more then 60 chars
+[] Create a system to keep track of what's displayed on the screen
+	[] Use a stack to push and pop things to the screen
+	[] That way you can have a popup that displays something then disapears
+[] Define character stats and attributes
+[] Create a battle system
+[] Create a weapon system
+	[] Different types of weapons with different damage levels
+[] Game saving 
+[] Create special items
+[] Create a navigation and map system
 
 This is Mark's test line
