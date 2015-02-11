@@ -1,6 +1,9 @@
 #ifndef GAMEUTIL_H_INCLUDE
 #define GAMEUTIL_H_INCLUDE
 
+/* Macro for getting size of ascii art picture in multidimensional array */
+#define picsize(a) (sizeof(a)/sizeof(a[0]))-1
+
 extern int current_x;	// Global variable for saving the cursor x position
 extern int current_y;	// Global variable for saving the cursor y position
 
@@ -22,5 +25,7 @@ void prompt();
 void clear();
 /* Displays stats box */
 void showstats();
+/* Displays an ascii art picture */
+void showpicture(const char *picture[], int size);
 
 #endif

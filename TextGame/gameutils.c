@@ -137,3 +137,15 @@ void showstats()
 	printf(" -----------------\n");
 	printf("\033[37;1H"); // Put the cursor at 1,1 top left
 }
+
+/* Displays an ascii art picture, provided in the form of a multi demensional array.
+The number of elements in the array must be provided for size */
+void showpicture(const char *picture[], int size)
+{
+	int i;
+	for(i = 0; i <= size; i++) {
+		printf("%s", picture[i]);
+		movecursor(current_x, current_y + 1);	// Move the cursor to next line
+	}
+}
+
