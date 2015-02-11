@@ -1,9 +1,6 @@
 TODO LIST
 -----------------------------------------------------------------------
 [] Change printmsg to linebreak at words, with each line no more then 60 chars
-[] Create a system to keep track of what's displayed on the screen
-	[] Use a stack to push and pop things to the screen
-	[] That way you can have a popup that displays something then disapears
 [] Define character stats and attributes
 [] Create a battle system
 [] Create a weapon system
@@ -15,11 +12,17 @@ TODO LIST
 	[] Takes a function pointer argument to handle the input
 	[] Draws a box and displays it somewhere on the screen
 	[] After the system to manage the screen is made, make it a popup that disappears after and redraws the screen
-[] Work on questionbox function, this needs to be a popup
 [] Figure out story line
 [] Make few side games
 [] Decide on diagram template from draw.io
 [] Make unit tests
+
+LOW PRIORITY
+------------------------------------------------------------------------
+[] Create a system to keep track of what's displayed on the screen
+	[] Use a stack to push and pop things to the screen
+	[] That way you can have a popup that displays something then disapears
+[] Make questionbox popup
 
 ADD TO WIKI LATER
 ------------------------------------------------------------------------
