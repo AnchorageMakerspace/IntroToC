@@ -84,6 +84,7 @@ int scene_1()
 	}
 	
 	msgbox(NULL, "A face stares back at you with greyish skin and eyes that almost glow blue. I thought I lost you there for a moment.  What is your name? ", CYAN);
+	questionbox(NULL, "Enter your name: ", 0, BLUE);
 	fgets(name, 20, stdin);	// get 20 characters from stdin
 	name[strnlen(name, 20)-1] = '\0'; // replace leftover \n with a null terminator
 	showscene(1);
@@ -104,45 +105,43 @@ int scene_1()
 		// Process the input
 		switch(item) {
 			case '1':
-				clear();
 				showscene(1);
-				printmsg("\nI found you here, nearly dead.  It took me a while to revive you.\n");
+				msgbox("Goran", "I found you here, nearly dead. I wasn't sure I was going to be able to revive you.", GREEN);
 			break;
 			case '2':
 				clear();
 				showscene(1);
-				printmsg("\nI am a Dalrek, my people have lived here for centuries.\n");
+				msgbox("Goran", "I am a Dalrek, my people have lived here for centuries.", GREEN);
 			break;
 			case '3':
-				clear();
 				showscene(1);
-				printmsg("\nI was hoping you could tell me that, I just found you here in the forrest, half dead.\n");
-				printmsg("\nI can't seem to remember....\n");
+				msgbox("Goran", "I was hoping you could tell me that, I just found you here in the forrest, half dead", GREEN);
+				getchar();
+				msgbox(name, "I can't seem to remember...", BLUE);
 			break;
 			case 'q':
 				stop = 1;
 			break;
 			default:
-				clear();
 				showscene(1);
-				printmsg("\nSorry, I didnt catch that");
+				msgbox("Goran", "Sorry I didn't catch that.", GREEN);
 			break;
 		} 
 		// Check to see if we should continue
 		if(stop) {
+			showscene(1);
+			msgbox(name, "I'm Sorry I'cant remember much more then my name...", BLUE);
+			msgbox("Goran", "I'll bring you back to my cabin.  Maybe after a warm meal you will remember more", GREEN);
 			return 0;
 		}
 	}
-	showscene(1);
-	printf("You say, \" I'm sorry I cant remember much more then my name...\"\n");
-	printf("The strange creature replies, \"I'll bring you back to my cabin. Maybe after a warm meal you will remember more. \"\n");
 }
 
 int scene_2()
 {
 	showscene(2);
-	printmsg("You arrive at a small cabin over shadowed by great mountains.\n");
-	printmsg("A warm meal makes you feel alive again\n");
+	msgbox(NULL,"Your arrive at a small cabin over shadowed by great mountains.", CYAN);
+	msgbox(NULL, "A warm meal makes you feel alive again", CYAN);
 	getchar();
 	showstats();
 	getchar();

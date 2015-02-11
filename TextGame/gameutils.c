@@ -13,7 +13,7 @@ void fgcolor(enum color_t c, int boldness)
 }
 
 /* Prints out the message character by character instead of all at once */
-/* Returns the number of lines */
+/* Returns the number of lines, this may be useful later */
 int printmsg(char *msg)
 {
 	int size = strlen(msg);
@@ -71,9 +71,9 @@ void questionbox(char *msg[], char *prompt, int num, enum color_t color)
 		// Move the cursor down, dont use /n because it will jump out of the box
 		movecursor(current_x, current_y+1);
 	}
-	
 	fgcolor(WHITE,0);
-	movecursor(current_x, current_y + 1); // Move cursor down to right after the box	
+	printf("%s", prompt);
+	movecursor(current_x + (strlen(prompt) + 1), current_y); // Move cursor to directly after the question
 }
 
 /* Draw a message box */
