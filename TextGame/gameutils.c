@@ -149,3 +149,4 @@ void showpicture(const char *picture[], int size)
 	}
 }
 
+

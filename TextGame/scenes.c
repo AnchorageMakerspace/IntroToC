@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "scenes.h"
 #include "gameutils.h"
 
 /* Displays ascii art scene at the top of the screen */
