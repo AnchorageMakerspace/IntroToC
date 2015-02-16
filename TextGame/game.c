@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "gameutils.h"
 #include "scenes.h"
-
+#include "map.h"
 
 int main ( void )
 {

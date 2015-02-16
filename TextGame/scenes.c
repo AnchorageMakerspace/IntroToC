@@ -9,7 +9,7 @@ void showscene(int num)
 	// http://ascii.co.uk/art has much more stuff
 	switch(num) {
 		case 1:
-				// Display the forrest
+				// Display the forest
 												  
 			puts("                        .'`'.    .'`'.   .'`/\\'.					");
 			puts("                    .,.'     `'.'     `'`  /%%\\ `/\\				");
@@ -114,7 +114,7 @@ int scene_1()
 			break;
 			case '3':
 				showscene(1);
-				msgbox("Goran", "I was hoping you could tell me that, I just found you here in the forrest, half dead", GREEN);
+				msgbox("Goran", "I was hoping you could tell me that, I just found you here in the forest, half dead", GREEN);
 				getchar();
 				msgbox(name, "I can't seem to remember...", BLUE);
 			break;
