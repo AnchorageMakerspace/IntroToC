@@ -1,6 +1,6 @@
 #ifndef GAMEUTIL_H_INCLUDE
 #define GAMEUTIL_H_INCLUDE
-
+#include "character.h"
 /* Macro for getting size of ascii art picture in multidimensional array */
 #define picsize(a) (sizeof(a)/sizeof(a[0]))-1
 
@@ -19,12 +19,10 @@ void movecursor(int x, int y);
 void questionbox(char *msg[], char *prompt, int size, enum color_t color);
 /* Displays a message box */
 void msgbox(char *name, char *msg, enum color_t color);
-/* Prompt for user input */
-void prompt();
 /* Clears the screen */
 void clear();
 /* Displays stats box */
-void showstats();
+void showstats(character *person);
 /* Displays an ascii art picture */
 void showpicture(const char *picture[], int size);
 

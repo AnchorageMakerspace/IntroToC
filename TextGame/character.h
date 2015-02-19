@@ -15,7 +15,7 @@ typedef struct armor{
 
 /* Defines any type of character, monster or player */
 typedef struct character{
-		char *name;			// Name of the creature
+		char name[20];			// Name of the creature
 		char *picture;		// ASCII art picture
 		int str;			// Strength
 		int dex;			// Dexterity
@@ -25,7 +25,9 @@ typedef struct character{
 		struct armor *armor;
 } character;
 
+extern struct character *player;
+
 void spawnMonster();
-void newCharacter();
+character *newCharacter(char *name);
 
 #endif

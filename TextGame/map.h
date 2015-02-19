@@ -58,6 +58,7 @@ typedef struct sign{
 	char *w;
 } sign;
 
+
 /* Adds a new location on the map */
 map *addPlace(char *name, enum terrain_t terrain);
 /* A sign that shows what is available in different directions */

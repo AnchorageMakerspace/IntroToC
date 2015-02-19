@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include "gameutils.h"
+#include "character.h"
+#include "map.h"
+
 
 /* Displays ascii art scene at the top of the screen */
 void showscene(int num)
@@ -84,10 +87,11 @@ int scene_1()
 	
 	msgbox(NULL, "A face stares back at you with greyish skin and eyes that almost glow blue. I thought I lost you there for a moment.  What is your name? ", CYAN);
 	questionbox(NULL, "Enter your name: ", 0, BLUE);
-	fgets(name, 20, stdin);	// get 20 characters from stdin
+	fgets(name, 20, stdin);	// get 20 characters from stdin 
 	name[strnlen(name, 20)-1] = '\0'; // replace leftover \n with a null terminator
+	player = newCharacter(name); // Very deliberately 20 character buffer.  Not the best way to do this, heap would be better.
 	showscene(1);
-	snprintf(buffer, 150, "Nice to meet you %s. My name is Goran.", name);
+	snprintf(buffer, 150, "Nice to meet you %s. My name is Goran.", player->name);
 	msgbox("Goran", buffer, GREEN);
 	// A loop to display a list of questions
 
@@ -142,7 +146,14 @@ int scene_2()
 	msgbox(NULL,"Your arrive at a small cabin over shadowed by great mountains.", CYAN);
 	msgbox(NULL, "A warm meal makes you feel alive again", CYAN);
 	getchar();
-	showstats();
+	msgbox(player->name, "I appreciate all your help, but I need to go out and discover what happened and why I can't remember", BLUE);
+	showscene(2);
+	msgbox("Goran", "Here is a map to help you navigate and a sword to keep you safe.  Head north to the town of Mavinhelm, you may find answers there.", GREEN);
+	msgbox(NULL, "Goran gives you a map and a sword", CYAN);
+	//showstats();
+	getchar();
+	clear();
+	showpicture(WorldMap, picsize(WorldMap));
 	getchar();
 	return 0;
 }

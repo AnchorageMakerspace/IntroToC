@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "gameutils.h"
+#include "map.h"
 
 int current_x;
 int current_y;
@@ -30,7 +31,7 @@ int printmsg(char *msg)
 		}
 		printf("%c",msg[i]);
 		fflush(stdout);
-		usleep(30000); // changed from 50000 to speed things up 
+		usleep(10000); // changed from 50000 to speed things up 
 	}
 	return lines;
 }
@@ -106,14 +107,6 @@ void msgbox(char *name, char *msg, enum color_t color)
 	movecursor(current_x, current_y + 1); // Move cursor down to right after the box
 }
 
-void prompt()
-{
-	movecursor(current_x, current_y + 2);
-	printf("> ");
-	movecursor(current_x + 3 , current_y);
-	getchar();
-}
-
 /* Clear the screen */
 void clear()
 {
@@ -126,7 +119,7 @@ void clear()
 
 
 /* Display stats at the top of the screen */
-void showstats()
+void showstats(character *person)
 {
 	printf("\033[1;1H"); // Put the cursor to 1,1 top left
 	printf(" -----------------\n");
