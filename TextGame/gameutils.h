@@ -25,5 +25,7 @@ void clear();
 void showstats(character *person);
 /* Displays an ascii art picture */
 void showpicture(const char *picture[], int size);
+/* Displays standard menu for when nothing else is going on */
+void standardmenu(void);
 
 #endif

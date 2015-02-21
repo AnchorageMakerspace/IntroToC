@@ -10,6 +10,7 @@ extern map *World;
 
 int main ( void )
 {
+	
 	while (1) { // Main game loop
 		// Scene 1
 		if((scene_1()) == -1) {
@@ -17,4 +18,5 @@ int main ( void )
 		}
 		scene_2();
 	}
+	
 }

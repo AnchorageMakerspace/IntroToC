@@ -50,18 +50,18 @@ void movecursor(int x, int y)
 void questionbox(char *msg[], char *prompt, int num, enum color_t color)
 {
 	int n;
-	
+	int lines = (num == 0) ? 1 : num; // If num is 0 then go ahead and make it 1 so we can build the box
 	movecursor(current_x, current_y);	// Set the position for the box to start at....
 	fgcolor(GRAY, 1);
 	// Box holds 60 characters per line
 	printf("\n");
-	printf("   _______________________________________________________________ \n");
+	printf("   _______________________________________________________________\n");
 	printf("  |                                                               |\n");
 	// Display the correct size box to hold the message
-	for(n = 0; n <= num; n++) {
+	for(n = 0; n < lines; n++) {
 		printf("  |                                                               |\n");
 	}
-	printf("  |_______________________________________________________________|\n");
+	printf("   ---------------------------------------------------------------\n");
 
 	fgcolor(WHITE, 1);
 	movecursor(5,current_y + 2); // Move the cursor to the top of the box.
@@ -116,8 +116,6 @@ void clear()
 }
 
 
-
-
 /* Display stats at the top of the screen */
 void showstats(character *person)
 {
@@ -143,3 +141,33 @@ void showpicture(const char *picture[], int size)
 }
 
 
+/* Displays the standard menu for when nothing else is going on */
+void standardmenu( void )
+{
+	char i;
+	// Display Menu
+	char *menuitems[] = { "1) View Inventory", "2) View Map", "3) Character Stats", "4) Game Menu"};
+	questionbox(menuitems, "Enter a number: ", 4, BLUE);
+	
+	scanf("%c", &i);
+	fgetc(stdin);
+	
+	switch(i) {
+		case '1':	// View Inventory
+		
+		break;		
+		case '2':	// View Map
+		
+		break;
+		case '3':	// Character Stats
+		
+		break;
+		case '4':	// Game Menu
+		
+		break;
+		default:
+		
+		break;
+	}
+	
+}
